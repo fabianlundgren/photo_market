@@ -6,6 +6,7 @@
       <%= image.name %>
       <%= form_tag("/add_to_cart", method: "post") do %>
         <%= hidden_field_tag(:image_id, image.id) %>
+              <!-- another hidden field to get the price of the image -->
         <%= submit_tag("Add to cart") %>
       <% end %>
     <% end %>
