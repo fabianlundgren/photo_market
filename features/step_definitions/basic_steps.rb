@@ -11,3 +11,7 @@ end
 Given(/^there are no images in the system$/) do
   Image.destroy_all
 end
+
+When(/^I click "([^"]*)"$/) do |button|
+  click_link_or_button button
+end
