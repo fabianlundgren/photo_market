@@ -1,0 +1,18 @@
+language: ruby
+notifications:
+  email: false
+  slack:
+    secure: EGzPzq5N5BpH56Ms396M/Z0GMjhy7lYMWwD5pwOfMFSJvdCc+O9Rj/E6lrEyJ5d394tuU+nXNYATIj+l+loTfS7aH7pwP1cK9AfP7ba8BDVyn2T30WLJ3uv/lJAXQCDL3se8OSUcos/Sq3Gy+jLA3lwIREns6mUh8Tq31ci04+kY4Tpfq8Nps5J9PB8buNOdImO5m3PQ0903E/FnPaBS1Q4Q+aE/6JqMuScSkWjbKkHih6aPUllOrzje+66//dLfixVNGPwA8Zy2Oc7v6ZbsDRpOBGQu/v4eM8f4ntJ28UfkL8H/fZ3PABp0fTmDPBI7+XEWkD2PddvNc7KXzZl4RGMYyMm4nBeOpcXWNHuv38eUGh+nBNpZVYGcgDbbCTfr8TWN/fwn3bBfqy+191md77YHEB3GsEeJNcvDJNT7ECnv+zUBxFY8r6kEeOT2hH2qHGpicLOEtwZWffYRBMtC3kZjH4y8iNydvranUNca/4kwBsYGSqvAA20fgOLlw23hhi7vwBdJGE3EP6RKwEAKXPdMqe4HPQII4IW/DgT42ScLXOlit3qFRhwemDHb2f4vYtS+FSLALIY2ng1gSHpWfkCAo3cy5wOhvnCS7xHHCbVWQP/3Acyh8C6XmZJyjsq/yNO0SkET0fv7QPW93eZsdorlL5wrap/zWCttF4C1s+k=
+rvm:
+  - 2.3.1
+cache:
+  - bundler
+  - apt
+sudo: required
+addons:
+  postgresql: '9.5'
+before_script:
+  - psql -c 'create database photo_market_test;' -U postgres
+  - bundle exec rails db:migrate
+script:
+  - bundle exec rails ci:tests

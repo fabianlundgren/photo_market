@@ -19,6 +19,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
+gem 'paperclip', '~> 5.0.0'
+
+
 
 group :development, :test do
   gem 'pry'
@@ -28,6 +31,7 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'cucumber-rails', require: false
+  gem 'coveralls', require: false
 end
 
 group :development do

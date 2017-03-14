@@ -7,14 +7,14 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_column :encrypted_password }
   end
 
-  describe 'validations' do
+  describe 'Validations' do
     it { is_expected.to validate_presence_of :name }
     it { is_expected.to validate_presence_of :email }
   end
 
   describe 'Factory' do
-    it 'is expected to have a valid factory' do
-      expect(FactoryGirl.create(:user)).to be_valid
+    it 'has a valid factory' do
+      expect(create(:user)).to be_valid
     end
   end
 end

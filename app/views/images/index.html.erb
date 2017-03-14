@@ -1,0 +1,12 @@
+<h1>photo market inc</h1>
+
+<div id="images">
+  <% if @images.any? %>
+    <% @images.each do |image| %>
+      <%= image.name %>
+    <% end %>
+  <% else %>
+    <p>No images yet!</p>
+  <% end %>
+
+</div>

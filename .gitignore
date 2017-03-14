@@ -19,3 +19,6 @@
 # Ruby Mine files
 .idea/
 /vendor
+
+coverage/
+public/system/
