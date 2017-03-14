@@ -1,4 +1,7 @@
 require 'cucumber/rails'
+require 'coveralls'
+Coveralls.wear!('rails')
+
 ActionController::Base.allow_rescue = false
 begin
   DatabaseCleaner.strategy = :transaction
