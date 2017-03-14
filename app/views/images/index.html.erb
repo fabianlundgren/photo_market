@@ -4,6 +4,10 @@
   <% if @images.any? %>
     <% @images.each do |image| %>
       <%= image.name %>
+      <%= form_tag("/add_to_cart", method: "post") do %>
+        <%= hidden_field_tag(:image_id, image.id) %>
+        <%= submit_tag("Add to cart") %>
+      <% end %>
     <% end %>
   <% else %>
     <p>No images yet!</p>
