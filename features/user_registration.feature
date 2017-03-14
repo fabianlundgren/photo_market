@@ -5,7 +5,7 @@ I would like to create an account
 
 Scenario: I create an account
   Given I am on the registration page
-#  Then I should see "Sign up"
+  Then I should see "Sign up"
   When I fill in "Name" with "Nisse"
   And I fill in "Email" with "Nisse@nisse.com"
   And I fill in "Password" with "12345678"
