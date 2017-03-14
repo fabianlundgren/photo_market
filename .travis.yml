@@ -13,5 +13,4 @@ before_script:
   - psql -c 'create database photo_market_test;' -U postgres
   - bundle exec rails db:migrate
 script:
-  - bundle exec rspec
-  - bundle exec cucumber
+  - bundle exec rails ci:tests
