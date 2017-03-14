@@ -1,1 +1,6 @@
 <h1>photo market inc</h1>
+<% if current_user %>
+  <h2>Welcome <%= current_user.name %>!</h2>
+<% else %>
+  <h2>Welcome guest!</h2>
+<% end %>
