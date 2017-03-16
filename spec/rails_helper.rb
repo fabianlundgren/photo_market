@@ -26,6 +26,9 @@ RSpec.configure do |config|
     end
   end
 
+  config.before(:each) do
+    Aws.config[:s3] = {stub_responses: true}
+  end
 end
 
 Shoulda::Matchers.configure do |config|
