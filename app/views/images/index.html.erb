@@ -3,7 +3,9 @@
     <% @images.each do |image| %>
       <div class="image-<%=image.id%>">
         <%= image_tag image.file.url, style: 'width: 200px; height: auto' %>
-        <p><%= image.name %></p>
+        <p><%= image.name %> <%= number_to_currency(image.price) %> </p>
+        <p><%= image.creator %> </p>
+        <p><%= image.print_size %></p>
         <%= form_tag(cart_items_path(cart_id: session[:cart_id]), method: 'post') do %>
           <%= hidden_field_tag(:image_id, image.id) %>
           <%= submit_tag('Buy') %>
