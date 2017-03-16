@@ -21,6 +21,7 @@ gem 'devise'
 gem 'aws-sdk'
 
 gem 'paperclip', '~> 5.0.0'
+gem 'acts_as_shopping_cart'
 
 
 

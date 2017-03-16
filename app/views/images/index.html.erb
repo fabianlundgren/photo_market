@@ -1,11 +1,13 @@
-<h1>photo market inc</h1>
-
 <div id="images">
   <% if @images.any? %>
     <% @images.each do |image| %>
       <div class="image-<%=image.id%>">
         <%= image_tag image.file.url, style: 'width: 200px; height: auto' %>
         <p><%= image.name %></p>
+        <%= form_tag(cart_items_path(cart_id: session[:cart_id]), method: 'post') do %>
+          <%= hidden_field_tag(:image_id, image.id) %>
+          <%= submit_tag('Buy') %>
+        <% end %>
       </div>
     <% end %>
   <% else %>
