@@ -13,6 +13,9 @@ Feature: Add images to the index page
     When I am on the index page
     Then I should see an image named "Sunset"
     And I should see an image named "Boat"
+    And I should see "John"
+    And I should see "$17.00"
+    And I should see "200x200"
     And I should not see "No images yet!"
 
   Scenario: Shows message if there are no images in the system
