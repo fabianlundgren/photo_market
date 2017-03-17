@@ -1,6 +1,6 @@
 When(/^I click on "([^"]*)"$/) do |image_name|
   image = Image.find_by(name: image_name)
-  find("img#img_link-#{image.id}").click
+  find("#img_link-#{image.id}").click
   # capybara click image link
 end
 

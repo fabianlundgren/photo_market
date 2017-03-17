@@ -2,8 +2,8 @@
   <% if @images.any? %>
     <% @images.each do |image| %>
       <div class="image-<%=image.id%>">
-        <%= link_to image_path(image.id) do %>
-          <%= image_tag image.file.url, style: 'width: 200px; height: auto', id: "img_link-#{image.id}" %>
+        <%= link_to image_path(image.id), id: "img_link-#{image.id}" do %>
+          <%= image_tag image.file.url, style: 'width: 200px; height: auto' %>
         <% end %>
         <p><%= image.name %> <%= number_to_currency(image.price) %> </p>
         <p><%= image.creator %> </p>
