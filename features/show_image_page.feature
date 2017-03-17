@@ -11,5 +11,6 @@ Feature: As a visitor
 Scenario: Shows image page if I click on an image
   When I am on the index page
   And I click on "Sunset"
+  Then I should see "images#show"
   Then I should see a large image of "Sunset"
   # Then I should see exif data for "Sunset"
